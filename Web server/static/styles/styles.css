@@ -1,0 +1,24 @@
+body{
+
+    font-family: 'Courier Prime';
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+
+}
+
+header{
+        font-family: 'Courier Prime';
+        color: rgb(255, 255, 255);
+        padding: 10em;
+        
+
+
+
+}
+section{
+    color: rgb(255, 255, 255);
+    padding: center;
+}
