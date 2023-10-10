@@ -4,6 +4,8 @@
 
 # Installation
 To run this code type this in terminal
-```bash pip install flask```
+```bash pip install flask``` <br>
+
+</br>
 Then run the main python script
 ```bash python app.py```
