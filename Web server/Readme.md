@@ -4,6 +4,7 @@
 
 # Installation
 To run this code type this in terminal
+
 ```bash pip install flask``` <br>
 
 </br>
