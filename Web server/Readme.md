@@ -8,4 +8,5 @@ To run this code type this in terminal
 
 </br>
 Then run the main python script
+
 ```bash python app.py```
