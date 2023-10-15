@@ -6,4 +6,5 @@ A well-integrated restaurant management system which utilizes python and its lib
 
 # Installation
 install tkinter module
+
 ``` pip install tkinter ```
