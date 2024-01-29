@@ -13,5 +13,8 @@ https://github.com/adityaraina100/Python-Projects/assets/75716013/fc19acba-dedd-
 
 </br>
 Run the ``` main.py ``` and you are good to go.
+
 **Note:** This game is inspired from a youtube video and is still under development.I am trying to use this as a base and create a different modified version of the game.
+
+
 FEEL FREE TO DROP SOME RECCOMENDATIONS!
