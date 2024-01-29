@@ -1,14 +1,14 @@
 import sqlite3
 
-# Step 4: Connect to the Database
+
 conn = sqlite3.connect('user_data.db')
 c = conn.cursor()
 
-# Step 5: Create the Users Table
+
 c.execute('''CREATE TABLE IF NOT EXISTS users
              (id INTEGER PRIMARY KEY, name TEXT, email TEXT)''')
 
-# Step 6: Define Functions for Database Operations
+
 
 def add_user(name, email):
     c.execute("INSERT INTO users (name, email) VALUES (?, ?)", (name, email))
@@ -21,7 +21,6 @@ def view_users():
     for row in rows:
         print(row)
 
-# Step 7: Interact with Users
 
 while True:
     print("\n1. Add User")
@@ -40,5 +39,4 @@ while True:
     else:
         print("Invalid choice. Please try again.")
 
-# Step 8: Close the Connection
 conn.close()
