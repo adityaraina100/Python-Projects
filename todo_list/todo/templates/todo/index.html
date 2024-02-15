@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+        font-family: 'Roboto Mono', monospace;
+        background-color: #1E1918;
+    }
+
+    .card {
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 7px 0 rgba(0, 0, 0, 0.07);
+      background: #fff;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .submit_form {
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+    }
+
+    .btn-primary,
+    .btn-default {
+      border-radius: 20px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .details {
+      color: #555;
+    }
+
+    .trash-icon {
+      color: #dc3545;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body class="container-fluid">
+
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-info">
+    <strong>{{message}}</strong>
+  </div>
+  {% endfor %}
+  {% endif %}
+
+  <center class="row">
+    <h1><b>TODO LIST</b></h1>
+    <hr />
+  </center>
+
+  <div class="row">
+
+    <div class="col-md-8">
+
+      {% for i in list %}
+      <div class="card">
+        <div class="title">{{i.title}}</div>
+        <hr />
+        <div class="date">{{i.date}}</div>
+        <hr />
+        <div class="details">{{i.details}}</div>
+        <br />
+        <br />
+        <form action="/del/{{i.id}}" method="POST" style=" padding-right: 4%; padding-bottom: 3%;">
+          {% csrf_token %}
+          <button value="remove" type="submit" class="btn btn-primary trash-icon"><i class="fas fa-trash-alt"></i> Remove</button>
+        </form>
+      </div>
+      {% endfor%}
+    </div>
+    <div class="col-md-1"> </div>
+    <div class="col-md-3">
+      <div class="submit_form">
+        <form method="POST">
+          {% csrf_token %}
+          {{forms}}
+          <br>
+          <input type="submit" class="btn btn-primary" value="Submit" />
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
